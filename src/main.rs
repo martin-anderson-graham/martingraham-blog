@@ -1,6 +1,7 @@
 #[cfg(feature = "ssr")]
 #[tokio::main]
 async fn main() {
+    console_error_panic_hook::set_once();
     use axum::Router;
     use leptos::*;
     use leptos_axum::{generate_route_list, LeptosRoutes};
