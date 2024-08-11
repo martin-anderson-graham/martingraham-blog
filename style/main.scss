@@ -2,3 +2,33 @@ body {
 	font-family: sans-serif;
 	text-align: center;
 }
+
+.layout-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar content";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px 1fr;
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.content {
+    grid-area: content;
+    padding: 20px;
+    background-color: #fff;
+}
