@@ -6,7 +6,6 @@ use leptos_router::*;
 #[component]
 pub fn App() -> impl IntoView {
     use crate::components::layout::header::Header;
-    use crate::components::layout::sidebar::Sidebar;
     // Provides context that manages stylesheets, titles, meta tags, etc.
     provide_meta_context();
 
@@ -33,9 +32,6 @@ pub fn App() -> impl IntoView {
                 <div class="layout-container">
                     <div class="header">
                         <Header />
-                    </div>
-                    <div class="sidebar">
-                        <Sidebar />
                     </div>
                     <div class="content">
                         <Routes>
