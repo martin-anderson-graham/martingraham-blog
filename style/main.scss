@@ -1,6 +1,25 @@
+:root {
+  /* Primary Color */
+  --primary-color: #00473E; /* Dark Green */
+
+  /* Background Colors */
+  --background-color: #2E2E2E; /* Dark Gray */
+  --secondary-background-color: #3B3B3B; /* Slightly Lighter Gray for secondary sections */
+
+  /* Text Color */
+  --text-color: #F0F0F0; /* Light Gray for better readability on a dark background */
+
+  /* Accent Colors */
+  --accent-color: #D4A373; /* Warm Gold */
+  --accent-color-2: #B5884E; /* Darker Warm Gold */
+  --accent-color-3: #E3B587; /* Lighter Warm Gold */
+}
+
 body {
-	font-family: sans-serif;
-	text-align: center;
+    font-family: "SUSE", sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+    margin: 0px;
 }
 
 .layout-container {
@@ -15,9 +34,9 @@ body {
 
 .header {
     grid-area: header;
-    background-color: #003300;
-    color: white;
-    padding: 5px 15px 20px 15px;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 5px 15px 20px 15%;
     text-align: left;
 }
 
@@ -28,18 +47,24 @@ body {
         font-size: 20px;
         font-weight: 600;
         text-decoration: none;
-        color: #FFFFFF;
+        color: var(--accent-color);
     }
     a:visited {
-        color: #FFFFFF;
+        color: var(--accent-color);
     }
     a:hover {
-        color: #008800;
+        color: var(--accent-color-2);
+    }
+    a.active {
+        color: var(--accent-color-3);
     }
 }
 
 .content {
     grid-area: content;
-    padding: 20px;
-    background-color: #fff;
+    padding: 20px 20% 20px 20%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: start;
+    font-size: 120%;
 }

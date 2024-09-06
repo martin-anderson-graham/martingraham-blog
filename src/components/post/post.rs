@@ -1,7 +1,4 @@
-use std::{
-    fs::{self},
-    io::Read,
-};
+use std::fs::{self};
 
 use leptos::*;
 use markdown;

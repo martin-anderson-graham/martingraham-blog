@@ -1,9 +1,7 @@
-# test header
+# 09/2024
 
-**some bold**
+I wanted to blog about trying to implement the actor model for prediction-ledger.rs.
 
-__don't remember__
+So then I wanted to write my own blog in rust (as an opportunity to use leptos).
 
-```ts
-let post = 'new thing'
-```
+So I think I've nerd-sniped myself.
