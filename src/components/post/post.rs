@@ -1,6 +1,6 @@
 use std::fs::{self};
 
-use leptos::*;
+use leptos::prelude::*;
 use markdown;
 
 #[component]
