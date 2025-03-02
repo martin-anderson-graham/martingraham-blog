@@ -1,70 +1,132 @@
-:root {
-  /* Primary Color */
-  --primary-color: #00473E; /* Dark Green */
-
-  /* Background Colors */
-  --background-color: #2E2E2E; /* Dark Gray */
-  --secondary-background-color: #3B3B3B; /* Slightly Lighter Gray for secondary sections */
-
-  /* Text Color */
-  --text-color: #F0F0F0; /* Light Gray for better readability on a dark background */
-
-  /* Accent Colors */
-  --accent-color: #D4A373; /* Warm Gold */
-  --accent-color-2: #B5884E; /* Darker Warm Gold */
-  --accent-color-3: #E3B587; /* Lighter Warm Gold */
+/* Reset some default browser styles (optional) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/*
+  Sticky footer:
+    - Make body a flex container with column direction
+    - Set min-height to 100vh (full viewport height)
+    - Let main grow (flex: 1)
+*/
 body {
-    font-family: "SUSE", sans-serif;
-    font-style: normal;
-    font-optical-sizing: auto;
-    margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* Base font size for desktops/tablets */
+  font-size: 16px;
 }
 
-.layout-container {
-    display: grid;
-    grid-template-areas:
-        "header"
-        "content";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    height: 100vh;
+/* HEADER STYLES */
+header {
+  background-color: #444;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header {
-    grid-area: header;
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-    padding: 5px 15px 20px 15%;
-    text-align: left;
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
 }
 
-.subnav-links {
-    display: flex;
-    gap: 20px;
-    a {
-        font-size: 20px;
-        font-weight: 600;
-        text-decoration: none;
-        color: var(--accent-color);
-    }
-    a:visited {
-        color: var(--accent-color);
-    }
-    a:hover {
-        color: var(--accent-color-2);
-    }
-    a.active {
-        color: var(--accent-color-3);
-    }
+/* NAVIGATION */
+nav ul {
+  display: flex;
+  flex-wrap: wrap; /* Links will wrap onto a new line if they don't fit */
+  list-style: none;
+  gap: 1rem;
 }
 
-.content {
-    grid-area: content;
-    padding: 20px 20% 20px 20%;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    text-align: start;
-    font-size: 120%;
+nav li {
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN CONTENT (flex: 1 pushes footer down) */
+main {
+  flex: 1;
+  width: 800px; /* Wide screens limit, for good reading width */
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+article {
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+  margin-bottom: 0.5rem;
+}
+
+article p {
+  margin-bottom: 1rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: left;
+  padding: 1rem;
+  background-color: #eee;
+  color: #555;
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+}
+
+
+/* 
+  MEDIA QUERY for small screens:
+    - Increase base font size for readability
+    - Remove the 800px max-width so articles take most of the width
+*/
+@media (max-width: 600px) {
+  body {
+    font-size: 18px; /* bump up font size for mobile */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header h1 {
+    margin-bottom: 0.75rem;
+  }
+
+  nav ul {
+    padding-left: 0;
+  }
+
+  /* Let the main container fill the width on mobile */
+  main {
+    max-width: 100%;
+    margin: 0.5rem auto; /* Some top/bottom margin for breathing room */
+    padding: 0 1rem;
+  }
 }
