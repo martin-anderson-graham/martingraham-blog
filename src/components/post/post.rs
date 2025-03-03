@@ -5,8 +5,8 @@ use markdown;
 
 #[component]
 pub fn Post(markdown_path: String) -> impl IntoView {
-    let markdown_str =
-        fs::read_to_string(markdown_path).unwrap_or("didn't read from file".to_string());
+    let markdown_str = fs::read_to_string(&markdown_path)
+        .unwrap_or(format!("didn't read from file, {}", markdown_path).to_string());
     let html = markdown::to_html(&markdown_str);
     view! {
 

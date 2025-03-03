@@ -58,6 +58,6 @@ pub fn App() -> impl IntoView {
 fn PostList() -> impl IntoView {
     use crate::components::post::post::Post;
     view! {
-        <Post markdown_path={"src/posts/first.md".to_string()}/>
+        <Post markdown_path={"./src/posts/first.md".to_string()}/>
     }
 }
